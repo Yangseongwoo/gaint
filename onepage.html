@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="onepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body>
+
+  <button id="scrollToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+      
+            // Show the button with fade in effect when scrolled down 2000px from the top
+            window.onscroll = function() {
+                if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            };
+      
+            // Scroll to the top of the document when the button is clicked
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        </script>
+
+
+    <nav>
+        <ul data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1000" class="nav-left">
+            <li><a href="onepage.html">로드바이크</a></li>
+            <li><a href="test3.html">산악자전거</a></li>
+            <li><a href="#">전기자전거</a></li>
+            <li><a href="#">모든 자전거</a></li>
+            <li><a href="#">용품</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">커뮤니티</a></li>
+        </ul>
+        
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1000" class="nav-center">
+            <a href="giant.html"><img src="image/Giant-Logo-2022 1.png" alt="Logo" class="logopng"></a>
+        </div>
+
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1000" class="nav-right">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        
+        <script>
+ window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 600) { // You can change 50 to the desired scroll position
+        nav.classList.add('nav-scrolled');
+      } else {
+        nav.classList.remove('nav-scrolled');
+      }
+    });
+        </script>
+
+    </nav>
+
+    <div class="main">
+      <img src="image/racing road bike.jpg" alt="" class="backimg">
+      <div class="overlay2"></div>
+      <div data-aos="fade-right"
+      data-aos-duration="1500" class="mainttx">
+      <div class="title">RACING ROAD BIKE</div>
+      <h1 class="subtx">업힐, 코너링, 다운힐에 효율적인 속도를 발휘하도록 설계된 자이언트 로드 바이크의 경쟁력을 선점하실 수 있습니다. <br>
+        레이싱, 트레이닝에 관계 없이 모든 상황에 더 빠른 스피드를 경험할 것입니다.</h1>
+      </div>
+  </div>
+
+
+
+  
+
+
+  <div class="filter-container">
+    <div class="filter-category" data-category="category1">All</div>
+    <div class="filter-category" data-category="category2">Best For</div>
+    <div class="filter-category" data-category="category3">Frame Material</div>
+    <div class="filter-category" data-category="category4">Seatpost Type</div>
+    <div class="filter-category" data-category="category5">Sale</div>
+</div>
+
+<div class="filter-options" id="category2-options">
+    <div class="filter-option">Aero Race</div>
+    <div class="filter-option">All-Rounder</div>
+    <div class="filter-option">Endurance</div>
+    <div class="filter-option">Race</div>
+</div>
+
+<div class="filter-options" id="category3-options">
+    <div class="filter-option">Composite/Carbon</div>
+    <div class="filter-option">Aluminium</div>
+</div>
+
+<div class="filter-options" id="category4-options">
+    <div class="filter-option">Adjustable</div>
+    <div class="filter-option">Intergrated</div>
+</div>
+
+<div class="filter-options" id="category5-options">
+    <div class="filter-option">onsale</div>
+</div>
+
+<!-- <div class="filter-options" id="category1-options">
+    <div class="filter-option">Option 21</div>
+    <div class="filter-option">Option 22</div>
+    <div class="filter-option">Option 23</div>
+</div> -->
+
+<script src="script.js"></script>
+
+
+
+
+<div class="bike_container">
+        <div class="container">
+        <div class="product-container">
+        <div class="product" id="product1">
+            <div class="product_wrapper">
+              <div class="product-label">NEW</div>
+              <div class="product-images">
+                <img src="image/image (10).png" alt="Product Image" class="product-image main-image">
+              </div>
+              <div class="product-info">
+                <p>TCR Advanced SL 1</p>
+                <h1>₩10,900,000</h1>
+              </div>
+
+              <div class="color-options">
+                <div class="color-circle active" style="background-color: #203145;"></div>
+                <div class="color-circle" style="background-color: #5b6d85;"></div>
+              </div>
+
+              <button class="bike-btn">VIEW BIKE</button>
+            </div>
+          </div>
+
+          <div class="product" id="product2">
+            <div class="product_wrapper">
+              <div class="product-label">NEW</div>
+              <div class="product-images">
+                <img src="image/bike 6.png" alt="Product Image" class="product-image main-image">
+              </div>
+              <div class="product-info">
+                <p>TCR Advanced Pro 0 Di2</p>
+                <h1>₩5,390,000</h1>
+              </div>
+
+              <div class="color-options">
+                <div class="color-circle active" style="background-color: #5b6d85;"></div>
+                <div class="color-circle" style="background-color: #000000;"></div>
+              </div>
+
+              <button class="bike-btn">VIEW BIKE</button>
+            </div>
+          </div>
+          
+          <div class="product" id="product3">
+            <div class="product_wrapper">
+              <div class="product-label">NEW</div>
+              <div class="product-images">
+                <img src="image/bike 7.png" alt="Product Image" class="product-image main-image">
+              </div>
+              <div class="product-info">
+                <p>Propel Advanced Pro</p>
+                <h1>₩7,600,000</h1>
+              </div>
+
+              <div class="color-options">
+                <div class="color-circle active" style="background-color: #0026ff;"></div>
+                <!-- <div class="color-circle" style="background-color: #FF5733;"></div> -->
+              </div>
+
+              <button class="bike-btn">VIEW BIKE</button>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="product-container">
+          <div class="product" id="product4">
+              <div class="product_wrapper">
+                <div class="product-label">NEW</div>
+                <div class="product-images">
+                  <img src="image/bike 8.png" alt="Product Image" class="product-image main-image">
+                </div>
+                <div class="product-info">
+                  <p>Contend AR</p>
+                  <h1>₩5,890,000</h1>
+                </div>
+  
+                <div class="color-options">
+                  <div class="color-circle active" style="background-color: #f0e0bd;"></div>
+                  <div class="color-circle" style="background-color: #ff8842;"></div>
+                </div>
+  
+                <button class="bike-btn">VIEW BIKE</button>
+              </div>
+            </div>
+  
+            <div class="product" id="product5">
+              <div class="product_wrapper">
+                <div class="product-label">NEW</div>
+                <div class="product-images">
+                  <img src="image/bike 10.png" alt="Product Image" class="product-image main-image">
+                </div>
+                <div class="product-info">
+                  <p>FastRoad SL</p>
+                  <h1>₩1,140,000</h1>
+                </div>
+  
+                <div class="color-options">
+                  <div class="color-circle active" style="background-color: #32655e;"></div>
+                  <div class="color-circle" style="background-color: #b1c5cc;"></div>
+                </div>
+  
+                <button class="bike-btn">VIEW BIKE</button>
+              </div>
+            </div>
+            
+            <div class="product" id="product6">
+              <div class="product_wrapper">
+                <div class="product-label">NEW</div>
+                <div class="product-images">
+                  <img src="image/bike 9.png" alt="Product Image" class="product-image main-image">
+                </div>
+                <div class="product-info">
+                  <p>FastRoad AR Advanced 1</p>
+                  <h1>₩1,990,000</h1>
+                </div>
+  
+                <div class="color-options">
+                  <div class="color-circle active" style="background-color: #c4c4c4;"></div>
+                  <div class="color-circle" style="background-color: #FF5733;"></div>
+                </div>
+  
+                <button class="bike-btn">VIEW BIKE</button>
+              </div>
+            </div>
+            
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="product-container">
+            <div class="product" id="product7">
+                <div class="product_wrapper">
+                  <div class="product-label">NEW</div>
+                  <div class="product-images">
+                    <img src="image/bike 12.png" alt="Product Image" class="product-image main-image">
+                  </div>
+                  <div class="product-info">
+                    <p>Cross City Disc</p>
+                    <h1>₩1,110,000</h1>
+                  </div>
+    
+                  <div class="color-options">
+                    <div class="color-circle active" style="background-color: #c4c4c4;"></div>
+<!--                     <div class="color-circle" style="background-color: #FF5733;"></div> -->
+                  </div>
+    
+                  <button class="bike-btn">VIEW BIKE</button>
+                </div>
+              </div>
+    
+              <div class="product" id="product8">
+                <div class="product_wrapper">
+                  <div class="product-label">NEW</div>
+                  <div class="product-images">
+                    <img src="image/bike 13.png" alt="Product Image" class="product-image main-image">
+                  </div>
+                  <div class="product-info">
+                    <p>TCR Advanced SL 1</p>
+                    <h1>₩550,000</h1>
+                  </div>
+    
+                  <div class="color-options">
+                    <div class="color-circle active" style="background-color: #484f59;"></div>
+<!--                     <div class="color-circle" style="background-color: #FF5733;"></div> -->
+                  </div>
+    
+                  <button class="bike-btn">VIEW BIKE</button>
+                </div>
+              </div>
+              
+              <div class="product" id="product9">
+                <div class="product_wrapper">
+                  <div class="product-label">NEW</div>
+                  <div class="product-images">
+                    <img src="image/bike 14.png" alt="Product Image" class="product-image main-image">
+                  </div>
+                  <div class="product-info">
+                    <p>FastRoad E+ EX</p>
+                    <h1>₩2,290,000</h1>
+                  </div>
+    
+                  <div class="color-options">
+                    <div class="color-circle active" style="background-color: #aaaaaa;"></div>
+<!--                     <div class="color-circle" style="background-color: #FF5733;"></div> -->
+                  </div>
+    
+                  <button class="bike-btn">VIEW BIKE</button>
+                </div>
+              </div>
+              
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="product-container">
+
+                <div class="product" id="product10">
+                  <div class="product_wrapper">
+                    <div class="product-label">NEW</div>
+                    <div class="product-images">
+                      <img src="image/bike 15.png" alt="Product Image" class="product-image main-image">
+                    </div>
+                    <div class="product-info">
+                      <p>FastRoad E+ EX</p>
+                      <h1>₩3,380,000</h1>
+                    </div>
+      
+                    <div class="color-options">
+                      <div class="color-circle active" style="background-color: #203145;"></div>
+<!--                       <div class="color-circle" style="background-color: #FF5733;"></div> -->
+                    </div>
+      
+                    <button class="bike-btn">VIEW BIKE</button>
+                  </div>
+                </div>
+
+                <div class="product" id="product11">
+                  <div class="product_wrapper">
+                    <div class="product-label">NEW</div>
+                    <div class="product-images">
+                      <img src="image/bike 16.png" alt="Product Image" class="product-image main-image">
+                    </div>
+                    <div class="product-info">
+                      <p>Escape</p>
+                      <h1>₩530,000</h1>
+                    </div>
+      
+                    <div class="color-options">
+                      <div class="color-circle active" style="background-color: #203145;"></div>
+                      <div class="color-circle" style="background-color: #e0e0e0;"></div>
+                      <div class="color-circle" style="background-color: #000000;"></div>
+                    </div>
+      
+                    <button class="bike-btn">VIEW BIKE</button>
+                  </div>
+                </div>
+
+                <div class="product" id="product12">
+                  <div class="product_wrapper">
+                    <div class="product-label">NEW</div>
+                    <div class="product-images">
+                      <img src="image/bike 17.png" alt="Product Image" class="product-image main-image">
+                    </div>
+                    <div class="product-info">
+                      <p>Trance X Advanced</p>
+                      <h1>₩6,100,000</h1>
+                    </div>
+      
+                    <div class="color-options">
+                      <div class="color-circle active" style="background-color: #203145;"></div>
+                      <!-- <div class="color-circle" style="background-color: #FF5733;"></div> -->
+                    </div>
+      
+                    <button class="bike-btn">VIEW BIKE</button>
+                  </div>
+                </div>
+
+                </div>
+                <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                    const products = document.querySelectorAll('.bike-btn');
+                    products.forEach(product => {
+                      product.addEventListener('click', function () {
+                        window.location.href = 'test3.html';
+                      });
+                    });
+                  });
+
+  // JavaScript 코드
+  const products = document.querySelectorAll('.product'); // 각 제품 요소들 가져오기
+
+  // 각 제품에 대해 이벤트 처리
+  products.forEach(product => {
+    const productImages = product.querySelector('.product-image'); // 제품 내 이미지 요소 가져오기
+    const colorCircles = product.querySelectorAll('.color-circle'); // 제품 내 색상 원 요소들 가져오기
+
+    let currentColorIndex = 0; // 초기 색상 인덱스
+
+    // 색상 원 클릭 시 이미지 변경
+    colorCircles.forEach((circle, index) => {
+      circle.addEventListener('click', () => {
+        // 이미 선택된 색상이면 처리 중단
+        if (circle.classList.contains('active')) return;
+
+        // 모든 색상 원에서 active 클래스 제거
+        colorCircles.forEach(c => c.classList.remove('active'));
+
+        // 현재 선택된 색상 원에 active 클래스 추가
+        circle.classList.add('active');
+
+        // 이미지 변경 로직
+        if (product.id === 'product1') {
+          if (index === 0) {
+            productImages.src = 'image/image (10).png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike 6.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product2') {
+          if (index === 0) {
+            productImages.src = 'image/bike 6.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike 6-1.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product3') {
+          if (index === 0) {
+            productImages.src = 'image/bike 7.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike3.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product4') {
+          if (index === 0) {
+            productImages.src = 'image/bike 8.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike 8-1.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product5') {
+          if (index === 0) {
+            productImages.src = 'image/bike 10.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike 10-1.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product6') {
+          if (index === 0) {
+            productImages.src = 'image/bike 9.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike 9-1.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product7') {
+          if (index === 0) {
+            productImages.src = 'image/bike 11.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike3.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product8') {
+          if (index === 0) {
+            productImages.src = 'image/bike 12.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike3.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product9') {
+          if (index === 0) {
+            productImages.src = 'image/bike 13.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike3.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product10') {
+          if (index === 0) {
+            productImages.src = 'image/bike 15.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike3.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product11') {
+          if (index === 0) {
+            productImages.src = 'image/bike 16.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike 16-1.png'; // 두 번째 색상 선택 시 이미지 설정
+          } else if (index === 2) {
+            productImages.src = 'image/bike 16-2.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        } else if (product.id === 'product12') {
+          if (index === 0) {
+            productImages.src = 'image/bike 17.png'; // 첫 번째 색상 선택 시 이미지 설정
+          } else if (index === 1) {
+            productImages.src = 'image/bike3.png'; // 두 번째 색상 선택 시 이미지 설정
+          }
+        }
+
+        // 현재 색상 인덱스 업데이트
+        currentColorIndex = index;
+      });
+    });
+
+    // 초기에 첫 번째 색상으로 이미지 설정 (선택한 경우)
+    colorCircles[currentColorIndex].click();
+  });
+                </script>
+              </div>
+            </div>
+
+
+
+            <footer class="footer">
+              <div class="footer-content">
+                <div class="footer-section">
+                  <div class="footer-column">
+                    <img src="image/Giant-Logo-2022 1.png" alt="Logo">
+                  </div>
+                  <div class="footer-column">
+                    <h5>FEATURES</h5>
+                    <ul>
+                      <li>뉴스</li>
+                      <li>이벤트</li>
+                      <li>매장안내</li>
+                      <li>팀&라이더</li>
+                      <li>테크놀로지</li>
+                      <li>바탕화면</li>
+                    </ul>
+                  </div>
+                  <div class="footer-column">
+                    <h5>SUPPORT</h5>
+                    <ul>
+                      <li>기획전</li>
+                      <li>온라인 구매</li>
+                      <li>빅사이즈 특별관</li>
+                      <li>이전 모델 검색</li>
+                      <li>매뉴얼</li>
+                      <li>정품 등록</li>
+                      <li>품질보증 규정</li>
+                    </ul>
+                  </div>
+                  <div class="footer-column">
+                    <h5>COMPANY</h5>
+                    <ul>
+                      <li>대리점전용</li>
+                      <li>신규 대리점 신청</li>
+                      <li>뉴스레터</li>
+                      <li>About 자이언트</li>
+                      <li>Privacy Statement</li>
+                      <li>Global Website</li>
+                      <li>쿠키 정책</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="footer-section">
+                  <div class="social-media">
+                    <img src="image/facebook.png" alt="Facebook" style="width: 24px; margin-right: 10px;">
+                    <img src="image/youtube.png" alt="Instagram" style="width: 33px; margin-right: 10px;">
+                    <img src="image/instagram.png" alt="YouTube" style="width: 24px; margin-right: 10px;">
+                  </div>
+                  <div class="company-info">
+                    <p>거대자전거(주)ㅣ04790 서울시 성동구 성수일로 89 메타모르포 302호</p>
+                    <p>연락처 02-463-7171</p>
+                    <p>대표이사 KOO KAM HOI</p>
+                    <p>사업자등록번호 206-86-31648</p>
+                    <p>통신판매신고번호 2021-서울성동-00908</p>
+                    <p>E-mail : giant@giant-korea.com</p>
+                  </div>
+                </div>
+              </div>
+            </footer>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            // 햄버거 메뉴 버튼에 대한 클릭 이벤트 리스너 추가
+            document.querySelector('.hamburger-menu').addEventListener('click', function() {
+                const filters = document.querySelector('.filters');
+                // filters의 display 상태를 토글합니다.
+                if (filters.style.display === 'none' || filters.style.display === '') {
+                    filters.style.display = 'block';
+                } else {
+                    filters.style.display = 'none';
+                }
+            });
+          });
+          </script>
+
+        <script>
+            AOS.init();
+          </script>
+</body>
+</html>

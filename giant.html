@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=|, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="giant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<button id="scrollToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <script src="scroll.js"></script>
+
+<body>
+
+  <nav>
+    <ul data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500" class="nav-left">
+        <li><a href="onepage.html">로드바이크</a></li>
+        <li><a href="#">산악자전거</a></li>
+        <li><a href="#">전기자전거</a></li>
+        <li><a href="#">모든 자전거</a></li>
+        <li><a href="#">용품</a></li>
+        <li><a href="#">Sale</a></li>
+        <li><a href="#">커뮤니티</a></li>
+    </ul>
+    
+    <div data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500" class="nav-center">
+        <a href="giant.html"><img src="image/Giant-Logo-2022 1.png" alt="Logo" class="logopng"></a>
+    </div>
+
+    <div data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500" class="nav-right">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    
+    <script>
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 600) { // You can change 50 to the desired scroll position
+    nav.classList.add('nav-scrolled');
+  } else {
+    nav.classList.remove('nav-scrolled');
+  }
+});
+    </script>
+
+</nav>
+  
+
+
+
+
+<div class="main">
+  <div class="slide active" data-slide-index="0">
+    <img src="image/wallpaper1.jpg" alt="" class="backimg">
+    <div class="overlay2"></div>
+    <div class="mainttx">
+      <div data-aos="fade-up" data-aos-duration="2500" class="title">BE LIMITLESS</div>
+      <div data-aos="fade-up" data-aos-duration="2500" data-aos-delay="300" class="subtx">자전거와 장비의 완벽한 환경을 조성하여<br>라이더가 자신의 한계를 극복한다</div>
+    </div>
+  </div>
+  <div class="slide" data-slide-index="1">
+    <img src="image/wallpaper2.jpg" alt="" class="backimg">
+    <div class="overlay2"></div>
+    <div class="mainttx">
+      <div class="title">DISCOVER NEW HEIGHTS</div>
+      <div class="subtx">자전거와 함께 극한의 높이에 도전하세요</div>
+    </div>
+  </div>
+  <div class="slide" data-slide-index="2">
+    <img src="image/wallpaper3.jpg" alt="" class="backimg">
+    <div class="overlay2"></div>
+    <div class="mainttx">
+      <div class="title">EXPLORE ENDLESS POSSIBILITIES</div>
+      <div class="subtx">자이언트 바이크와 함께 끝없는 가능성을 탐험하세요</div>
+    </div>
+  </div>
+  <div class="progress-bar"></div>
+  <div class="indicators">
+    <div class="indicator active" data-slide-to="0"></div>
+    <div class="indicator" data-slide-to="1"></div>
+    <div class="indicator" data-slide-to="2"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const progressBar = document.querySelector('.progress-bar');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    const slideCount = slides.length;
+    const slideDuration = 8000; // 각 슬라이드 표시 시간 (밀리초)
+    let isDragging = false;
+    let startX;
+    let deltaX = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, idx) => {
+        if (idx === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      updateProgressBar();
+      updateIndicators(index);
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slideCount;
+      showSlide(currentSlide);
+    }
+
+    function updateProgressBar() {
+      progressBar.style.transition = 'width 0s linear'; // transition 초기화
+      progressBar.style.width = '0%'; // 초기화
+
+      setTimeout(() => {
+        progressBar.style.transition = `width ${slideDuration}ms linear`; // transition 설정
+        progressBar.style.width = '100%'; // 100%로 증가
+      }, 100); // 100밀리 초 후 시작
+    }
+
+    function updateIndicators(index) {
+      indicators.forEach((indicator, idx) => {
+        if (idx === index) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+
+    function handleSlideTransition() {
+      if (deltaX > 50 && !isDragging) {
+        // 왼쪽으로 드래그하면 다음 슬라이드로
+        nextSlide();
+        deltaX = 0;
+        isDragging = true;
+      } else if (deltaX < -50 && !isDragging) {
+        // 오른쪽으로 드래그하면 이전 슬라이드로
+        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+        showSlide(currentSlide);
+        deltaX = 0;
+        isDragging = true;
+      }
+    }
+
+    function handleTouchStart(e) {
+      isDragging = false;
+      startX = e.touches[0].clientX;
+    }
+
+    function handleTouchMove(e) {
+      if (!startX) return;
+      deltaX = e.touches[0].clientX - startX;
+    }
+
+    function handleTouchEnd() {
+      handleSlideTransition();
+      startX = null;
+    }
+
+    function handleIndicatorClick(index) {
+      currentSlide = index;
+      showSlide(currentSlide);
+    }
+
+    // 슬라이드 드래그 이벤트 핸들러 등록
+    slides.forEach(slide => {
+      slide.addEventListener('touchstart', handleTouchStart);
+      slide.addEventListener('touchmove', handleTouchMove);
+      slide.addEventListener('touchend', handleTouchEnd);
+    });
+
+    // 인디케이터 클릭 이벤트 핸들러 등록
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        handleIndicatorClick(index);
+      });
+    });
+
+    setInterval(nextSlide, slideDuration); // 다음 슬라이드로 이동
+
+    // 초기 슬라이드 표시
+    showSlide(currentSlide);
+  });
+</script>
+
+
+
+
+
+<div class="all_container">
+    <div class="container">
+        <div class="title3">EXPLORE BIKE</div>
+        <div class="content-wrapper">
+            <div data-aos="fade-up"
+            data-aos-duration="3000" class="content">
+                <img src="image/ex1.png" alt="Road Bike">
+                <div class="content-title">ROAD BIKE</div>
+                <button class="explore-button">Explore More</button>
+            </div>
+            <div data-aos="fade-up"
+            data-aos-duration="3000" class="content">
+                <img src="image/ex2.png" alt="Road Bike">
+                <div class="content-title">MOUNTAIN BIKES</div>
+                <button class="explore-button">Explore More</button>
+            </div>
+            <div data-aos="fade-up"
+            data-aos-duration="3000" class="content">
+                <img src="image/ex3.png" alt="Road Bike">
+                <div class="content-title">ELECTRIC BIKES</div>
+                <button class="explore-button">Explore More</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-aos="fade-right"
+data-aos-offset="300"
+data-aos-easing="ease-in-sine" class="master">
+    <img src="image/mountine 2.jpg" alt="">
+    <div class="overlay">
+        <div class="master_text">
+        <h2>The all-new Trance X range</h2>
+        <h1>MASTER THE MOUNTINE</h1>
+        <button>SEE MORE</button>
+    </div>
+    </div>
+</div>
+
+
+<div class="container3">
+  <div class="rider_container">
+    <h4>라이더 용품</h4>
+    <h2>어떤 종류의 라이딩을 하든 편안하고 <br> 효율적이며 안전하게 사용할 수 있도록 도와줍니다.</h2>
+    <button class="shop-now-btn">SHOP NOW</button>
+  </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="image/image (13).png" alt="Product 1">
+        <h3 class="Productname">차지 프로 신발</h3>
+        <h2 class="Productprice">₩ 99,000</h2>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="image/helmat1 (1).png" alt="Product 1">
+        <h3 class="Productname">레브 Pro MIPS</h3>
+        <h2 class="Productprice">₩280,000</h2>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="image/hand (2).png" alt="Product 1" class="hand">
+        <h3 class="Productname">엘리베이트 LTD 반장갑</h3>
+        <h2 class="Productprice">₩31,000</h2>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="image/helmat1 (2).png" alt="Product 1" class="cloth">
+        <h3 class="Productname">APEX 반팔 져지</h3>
+        <h2 class="Productprice">₩190,000</h2>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="image/socks.png" alt="Product 1" class="socks">
+        <h3 class="Productname">GFORT 레이스데이 양말</h3>
+        <h2 class="Productprice">₩57,000</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div data-aos="fade-right"
+data-aos-offset="300"
+data-aos-easing="ease-in-sine" class="freeride">
+  <img src="image/freeride 2.png" alt="">
+  <div class="free_overlay">
+    <div class="freeride_text">
+      <h2 class="free_title">FREERIDE ROAD TRIP</h2>
+      <h1 class="free_ttx">유타 사막의 가파른 절벽에서 전 세계의 어반 스트리트 이벤트에 이르기까지, <br>
+        GIANT 프리라이더들은 그들의 이야기와 기술을 보여줄 수 있는 최고의 트레일과 레이스를 찾아 <br>
+        전 세계를 여행합니다. 그들은 경쟁하고, 영상을 만들며, 사진을 찍고, 우리에게 영감과 힘을 주기 위해 자전거를 타고 나아갑니다.</h1>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="news_container"><h3>NEWS&UPDATE</h3>
+<div class="news_wrap">
+<figure class="snip1347">
+    <img src="image/news1.jpg" alt="sample87" />
+    <div class="date">September 14th, 2015</div>
+    <figcaption>
+      <h2>티씨알 어드밴스 SL <br> “최고의 클라이밍 자전거”</h2>
+      <p>디파이 어드밴스 Pro는 바이크레이다와 파트너 출판사인 사이클링 플러스에서 2024 올해의 자전거 어워드를 받았고, 엔듀런스 및 종합 로드 바이크 카테고리에서 모두 최고의 영예를 안았다. </p>
+      <a href="#" class="read-more2">Read More</a>
+    </figcaption>
+  </figure>
+  <figure class="snip1347 hover"><img src="image/news2.jpg" alt="sample74" />
+    <div class="date">September 14th, 2015</div>
+    <figcaption>
+      <h2>10세대 TCR 로드 라인업,<br>미디어의 주목을 받다!</h2>
+      <p>자이언트 그룹의 창립자 킹 리우(King Liu)로부터 영감을 받은 제16회 라이드 라이크 킹 기념 행사는 도움이 필요한 지역 사회에 600대의 월드 바이시클 릴리프 자전거 기부라는 결과로 이어졌다.
+      </p><a href="#" class="read-more3 ">Read More</a>
+    </figcaption>
+  </figure>
+  <figure class="snip1347"><img src="image/news3.jpg" alt="sample69" />
+    <div class="date">November 30th, 2015</div>
+    <figcaption>
+      <h2>패튼, 존스턴의 라이프타임 <br> GP 시리즈 개막전 TOP 5!</h2>
+      <p>캘리포니아에서 열린 씨 오터 클래식 사이클링 페스티벌에서 라이프 타임 그랑프리 시리즈와 푸에고 XL MTB 레이스가 시작되었다. 그리고 자이언트 프라이버티어스의 콜 패튼과 브렌단 존스턴은 모두 상위 5위에 올랐다.
+</p>
+      <a href="#" class="read-more4">Read More</a>
+    </figcaption>
+  </figure>
+  <figure class="snip1347"><img src="image/news4.jpg" alt="sample69" />
+    <div class="date">November 30th, 2015</div>
+    <figcaption>
+      <h2>존스톤, MTB 마라톤 <br> 내셔널 챔피언쉽 우승!</h2>
+      <p>브렌단 존스턴(Brendan Johnston)은 2024 오스트레일리아 MTB 마라톤 내셔널 챔피언쉽에서 자이언트 라이더들의 압도적인 활약을 이끌며 와가와가에서 우승을 차지했고 엘리트 남성부 타이틀을 획득했다.</p>
+      <a href="#" class="read-more5">Read More</a>
+    </figcaption>
+  </figure>
+    </div>
+</div>
+
+<div class="event-container">
+  <div class="event-title">MEET OUT LATEST EVENT</div>
+  <div class="event-cards">
+      <div class="event-item" onclick="toggleCard(this)">
+          <div class="img-container">
+              <img src="image/event 1.jpg" alt="Event Image 1">
+              <div class="text-container">
+                  <h2>스프링 세이빙 프로모션</h2>
+                  <div class="more-content hidden">
+                      <p>설명글로 4월 22일부터 6월 30일까지,  <br>로드, MTB, E-바이크를 30%에서 최대 50% 가격으로 만나보세요.</p>
+                      <button class="read-more">Read More</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="event-item" onclick="toggleCard(this)">
+          <div class="img-container">
+              <img src="image/event 2.jpg" alt="Event Image 2">
+              <div class="text-container">
+                  <h2>ZWIFT 모티베이션 라이딩</h2>
+                  <div class="more-content hidden">
+                      <p>야외에서 멋진 라이딩을 하며 주말을 즐긴 후에 소셜 라이딩에 참가하고 싶거나,  <br>한주를 즐겁게 시작할 수 있는 방법을 찾고 있는 라이더를 위해 <br> 한국 기준 매주 화요일 오전 8시에 GIANT 모티베이션 라이딩이 열린다.</p>
+                      <button class="read-more">Read More</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="event-item" onclick="toggleCard(this)">
+          <div class="img-container">
+              <img src="image/event3.jpg" alt="Event Image 3">
+              <div class="text-container">
+                  <h2>ZWIFT EURO HUMP DAY RIDE</h2>
+                  <div class="more-content hidden">
+                      <p>유럽 스타일의 Hump Day가 열린다! <br> AHDR 시리즈의 유럽 세션은 2.3-2.8 w/kg의 일정한 페이스로 진행되며,<br> 중간에 다양한 이벤트가 준비되어 있다.</p>
+                      <button class="read-more">Read More</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="event-item" onclick="toggleCard(this)">
+          <div class="img-container">
+              <img src="image/event4.jpg.jpg" alt="Event Image 4">
+              <div class="text-container">
+                  <h2>ZWIFT AHDR 펀데이 라이딩</h2>
+                  <div class="more-content hidden">
+                      <p>ZWIFT WATOPIA
+                        AHDR/GIANT 리더와 함께 즐겁고 재미있는 소셜 그룹 라이딩을 경험해보자!</p>
+                      <button class="read-more">Read More</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-column">
+          <img src="image/Giant-Logo-2022 1.png" alt="Logo">
+        </div>
+        <div class="footer-column">
+          <h5>FEATURES</h5>
+          <ul>
+            <li>뉴스</li>
+            <li>이벤트</li>
+            <li>매장안내</li>
+            <li>팀&라이더</li>
+            <li>테크놀로지</li>
+            <li>바탕화면</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>SUPPORT</h5>
+          <ul>
+            <li>기획전</li>
+            <li>온라인 구매</li>
+            <li>빅사이즈 특별관</li>
+            <li>이전 모델 검색</li>
+            <li>매뉴얼</li>
+            <li>정품 등록</li>
+            <li>품질보증 규정</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>COMPANY</h5>
+          <ul>
+            <li>대리점전용</li>
+            <li>신규 대리점 신청</li>
+            <li>뉴스레터</li>
+            <li>About 자이언트</li>
+            <li>Privacy Statement</li>
+            <li>Global Website</li>
+            <li>쿠키 정책</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-section">
+        <div class="social-media">
+          <img src="image/facebook.png" alt="Facebook" style="width: 24px; margin-right: 10px;">
+          <img src="image/youtube.png" alt="Instagram" style="width: 33px; margin-right: 10px;">
+          <img src="image/instagram.png" alt="YouTube" style="width: 24px; margin-right: 10px;">
+        </div>
+        <div class="company-info">
+          <p>거대자전거(주)ㅣ04790 서울시 성동구 성수일로 89 메타모르포 302호</p>
+          <p>연락처 02-463-7171</p>
+          <p>대표이사 KOO KAM HOI</p>
+          <p>사업자등록번호 206-86-31648</p>
+          <p>통신판매신고번호 2021-서울성동-00908</p>
+          <p>E-mail : giant@giant-korea.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="footer_container"></div>
+    <script src="giant.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
